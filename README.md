@@ -78,6 +78,7 @@ The two websites are:
     From this website, I encountered several "issues" as I immediately noticed that it is much faster than Wallet Explorer in de-anonymizing addresses. However, after successfully de-anonymizing four clusters, I encountered a "block" from the website that prevented me from making further requests. The site employs a Cloudflare CAPTCHA to prevent excessive requests and can recognize whether the requester is a bot or not. In my case, I had to wait for a long time before being able to test the code again (and I bypassed the CAPTCHA with a VPN). Subsequently, I added a 5-second time interval between each request for the following attempts.
 
 In both cases, I save the obtained results in a JSON file (a separate file for each method). The advantage of attempting to de-anonymize addresses through two different websites is that it is highly likely that if one of them fails to de-anonymize a particular address, the other website may succeed. This way, I increase the chances of de-anonymizing as many addresses (clusters) as possible, ensuring that I cover the last cluster as well.
+
 ## Conclusions
 
 Regarding the Web Scraping part, after careful analysis and multiple code executions, I have reached the following conclusions:
@@ -85,6 +86,12 @@ Regarding the Web Scraping part, after careful analysis and multiple code execut
 - The time taken to de-anonymize the addresses is quite high (around 6-7 minutes) for both methods. This could be reduced by simply decreasing the time interval between each request (although finding a time that allows all requests without triggering the error of too many requests would be challenging), or by reducing the maximum number of attempts the search algorithm can make before concluding that it failed to find a wallet name. However, the latter solution may result in a lower number of de-anonymized clusters.
 
 - Using two different websites for de-anonymization allows for de-anonymizing more distinct addresses, but it also introduces inconsistencies. Based on the results I obtained, some clusters are not associated with the same wallet name by both methods. A useful strategy would be to attempt to de-anonymize the clusters that one method failed to de-anonymize using the other method. In the results at the end of the notebook, the wallet names highlighted in bold are the ones that were de-anonymized identically by both methods.
+
+The reason why Wallet Explorer and Bitcoin Info Charts de-anonymize in different ways may be due to different analysis algorithms and data acquisition methods used by the two websites. Since information about Bitcoin transactions is public and recorded on the blockchain, it is possible to analyze and link Bitcoin addresses to transactions and, in some cases, to associated wallets.
+
+However, the process of de-anonymization requires analysis and correlations between addresses and transactions, which can be complex and prone to errors. Additionally, the information available on both sites may not be complete or updated in real-time, which could impact the differences in de-anonymization results.
+
+It is also possible that Wallet Explorer and Bitcoin Info Charts have access to different data sources or adopt different approaches in processing information to determine the wallets associated with Bitcoin addresses. These factors could contribute to inconsistencies in de-anonymization between the two sites.
 
 ### Results Obtained
 
