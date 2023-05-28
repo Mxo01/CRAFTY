@@ -22,6 +22,7 @@ Finally, the project yields results, and conclusions are drawn based on the find
 - You can execute the code up to the Clustering section and stop before running the Web Scraping part.
 - You can comment out the code that updates the JSON files in both methods (but be aware that this will significantly increase the execution time of the code, taking around 6-7 minutes per scraping method).
 
+For obvious reasons I can't provide the Dataset here on GitHub (the folder is approximately 1.7GB), but for those interested in testing the code and trying something new, you can email me at mariodimodica.01@gmail.com
 
 ## Analysis
 
