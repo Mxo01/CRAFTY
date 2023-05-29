@@ -91,7 +91,19 @@ The reason why Wallet Explorer and Bitcoin Info Charts de-anonymize in different
 
 However, the process of de-anonymization requires analysis and correlations between addresses and transactions, which can be complex and prone to errors. Additionally, the information available on both sites may not be complete or updated in real-time, which could impact the differences in de-anonymization results.
 
-It is also possible that Wallet Explorer and Bitcoin Info Charts have access to different data sources or adopt different approaches in processing information to determine the wallets associated with Bitcoin addresses. These factors could contribute to inconsistencies in de-anonymization between the two sites.
+While conducting some online research, I came across some information regarding the two websites:
+
+Regarding Wallet Explorer, it employs the following logic to associate addresses with wallets: "if two addresses appear as inputs to the same transaction, it assumes that they belong to the same wallet." This is because typically both private keys are required to sign a transaction. Its wallets are clusters of addresses, where all addresses within a cluster are connected through a path of one or more links, and there is no connection between addresses in different clusters. The algorithm can fail in two ways:
+
+- If BitPay (for example) has some receiving addresses that have never been merged with others, those addresses will appear as a separate wallet with a generic numeric "name."
+
+- The other possible failure is issuing a transaction where the inputs belong to two different individuals, each signing their respective part of the transaction. This occurs due to the CoinJoin service, as mentioned earlier.
+
+Regarding Wallet Explorer, I found many common opinions regarding its inefficiency and inaccuracy in providing de-anonymization results. This is due to the site not being updated for a long time, thus unable to de-anonymize more recent addresses (hence the occurrence of returning a number instead of a wallet).
+
+I was unable to find further information on Bitcoin Info Charts, so I believe they either use a different heuristic than Wallet Explorer or have different data to rely on.
+
+*Source: [https://www.reddit.com/r/Bitcoin/](https://www.reddit.com/r/Bitcoin/)*
 
 ### Results Obtained
 
@@ -144,6 +156,8 @@ Bitcoin Info Charts:
 **BtcDice** was a website dedicated to Bitcoin-based gambling. It offered an online dice game service, where users could bet and win Bitcoin. The operation of BtcDice was quite simple: users could enter a quantity of Bitcoin as a bet and select a numerical value to bet on. Subsequently, the site randomly generated a number, and if the generated number was lower than the value selected by the user, they would win the bet and receive a quantity of Bitcoin according to the game's rules.
 
 **Bitcoin.de** is a marketplace where Bitcoin is traded directly between users and acts as a trustee for the Bitcoin offered on the site. It is also possible to use the account as an online wallet for Bitcoin. Currently, it offers the service of exchanging between Bitcoin and Euro. The supported payment methods are bank transfer, SEPA, and Moneybookers.
+
+*Source: [Bitcoin Wiki](https://en.bitcoin.it/wiki/Main_Page)*
 
 ## Documentation
 
