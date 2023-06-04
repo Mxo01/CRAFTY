@@ -77,7 +77,7 @@ jul_aug = list()
 sep_oct = list()
 nov_dec = list()
 
-for i in range(len(two_months_list) - 1):
+for i in range(0, len(two_months_list) - 1, 2):
   two_months = transactions[transactions['timestamp'].between(two_months_list[i], two_months_list[i + 1])]
 
   monthly_tx_distribution = two_months.groupby('blockId').size()
